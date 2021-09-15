@@ -1,0 +1,26 @@
+name: Manual Deploy workflow
+
+on:
+  workflow_dispatch:
+
+env:
+  MINIKUBE_VERSION: v1.20.0
+  KUBERNETES_VERSION: v1.20.4
+
+jobs:
+  GetInfo:
+    name: GetInfo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Minikube
+        uses: manusa/actions-setup-minikube@v2.3.1
+        with:
+          minikube version: '${{ env.MINIKUBE_VERSION }}'
+          kubernetes version: '${{ env.KUBERNETES_VERSION }}'
+          start args: '--addons=ingress'
+      - name: Minikube Info
+        run: |
+          minikube ip
+          kubectl get nodes
+          kustomize version
+

@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+resources:
+- ../../cms/kustomize/cms/overlays/common
+- ../../comparator/kustomize/comparator/overlays/common
+- ../../login-consent/kustomize/login-consent/overlays/common
+- ../../issuer/kustomize/issuer/overlays/common
+- ../../rp/kustomize/rp/overlays/common
+- ../../ace-rp/kustomize/ace-rp/overlays/common
+- ../../jobs/kustomize/jobs/overlays/common

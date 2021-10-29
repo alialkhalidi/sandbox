@@ -14,7 +14,7 @@ export DEPLOYMENT_ENV	?= local
 # space delimited of Key:Value pairs
 COMMON_LABELS		:= instance:${DEPLOYMENT_ENV}
 export DOMAIN      		?= ${DEPLOYMENT_ENV}.trustbloc.dev
-export HYDRA_POSTGRES_DSN								?= postgres://loginconsent:loginconsent-secret-pw@postgres-demo:5432/loginconsent?sslmode=disable
+export DEMO_HYDRA_POSTGRES_DSN								?= postgres://loginconsent:loginconsent-secret-pw@postgres-demo:5432/loginconsent?sslmode=disable
 
 OS 				= $(shell uname -s | tr '[:upper:]' '[:lower:]')
 ARCH  				= $(shell uname -m | sed 's/x86_64/amd64/')

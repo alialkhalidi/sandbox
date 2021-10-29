@@ -8,4 +8,4 @@ apiVersion: svceng
 kind: SedB64Transformer
 metadata:
   name: sedb64transformer
-argsOneLiner: s^||HYDRA_POSTGRES_DSN||^${HYDRA_POSTGRES_DSN}^
+argsOneLiner: s^||DEMO_HYDRA_POSTGRES_DSN||^${DEMO_HYDRA_POSTGRES_DSN}^

@@ -16,7 +16,7 @@ jobs:
       - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
         with:
           port: 80
-          ngrok_authtoken: 1234
+          ngrok_authtoken: MJHGSkjst2HNWLXui5PM_qCaBq0W2sNFcCa0olTAs
       - name: Setup upterm session
         uses: lhotari/action-upterm@v1
       - name: Setup Minikube

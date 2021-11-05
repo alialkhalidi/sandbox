@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
+      with:
+        port: 80
+        ngrok_authtoken: 1234
       - name: Setup upterm session
         uses: lhotari/action-upterm@v1
       - name: Setup Minikube

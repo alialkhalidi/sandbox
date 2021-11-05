@@ -12,6 +12,8 @@ jobs:
     name: GetInfo
     runs-on: ubuntu-latest
     steps:
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
       - name: Setup Minikube
         uses: manusa/actions-setup-minikube@v2.3.1
         with:
@@ -20,6 +22,8 @@ jobs:
           start args: '--addons=ingress'
       - name: Minikube Info
         run: |
+          ip a
+          curl -sk https://ipinfo.io
           minikube ip
           kubectl get nodes
           kustomize version

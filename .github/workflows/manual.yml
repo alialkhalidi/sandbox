@@ -28,3 +28,4 @@ jobs:
           minikube ip
           kubectl get nodes
           kustomize version
+          sleep 1h

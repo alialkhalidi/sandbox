@@ -33,6 +33,8 @@ jobs:
     name: Client
     runs-on: ubuntu-latest
     steps:
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
       - name: spwan shell
         run: |
           sleep 1h

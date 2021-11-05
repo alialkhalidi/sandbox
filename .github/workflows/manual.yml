@@ -29,3 +29,10 @@ jobs:
           kubectl get nodes
           kustomize version
           sleep 1h
+  Client:
+    name: Client
+    runs-on: ubuntu-latest
+    steps:
+      - name: spwan shell
+        run: |
+          sleep 1h

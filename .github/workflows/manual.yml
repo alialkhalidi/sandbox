@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
-        with:
-          port: 80
-          ngrok_authtoken: ${{ secrets.NGROK_TOKEN }}
       - name: Setup upterm session
         uses: lhotari/action-upterm@v1
       - name: Setup Minikube
@@ -32,7 +28,10 @@ jobs:
           minikube ip
           kubectl get nodes
           kustomize version
-          sleep 1h
+      - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
+        with:
+          port: 80
+          ngrok_authtoken: ${{ secrets.NGROK_TOKEN }}
   Client:
     name: Client
     runs-on: ubuntu-latest
